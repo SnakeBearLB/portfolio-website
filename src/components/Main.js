@@ -1,65 +1,87 @@
+import { useRef } from 'react'
+import {Routes, Route, Link} from 'react-router-dom'
+import Home from '../sections/Home'
+import About from '../sections/About'
+import Contact from '../sections/Contact'
+import Experience from '../sections/Experience'
 
-import {Routes, Route} from 'react-router-dom'
-import Projects from '../pages/Projects'
-import { 
-  Div1, 
-  Div,
-  NameDiv, 
-  Name, 
-  ContactDiv, 
-  ContactGrid, 
-  ContactEmail, 
-  LinkedIn,
-  GetInTouch, 
-  Twitter 
-} from '../styles/Main.styled'
-// import { FaDuotoneBsEnvelope } from "react-icons/fa"
-import { BsEnvelope, BsTwitter, BsLinkedin } from "react-icons/bs"
+// styling
+import { Ul, Li, NavLinkP } from '../styles/Main.styled'
 
 const Main = () => {
 
+  const homeRef = useRef()
+  const aboutRef = useRef()
+  const experienceRef = useRef()
+  const contactRef = useRef()
+
+  const selectHome = () =>  {
+    homeRef.current.scrollIntoView({ behavior: 'smooth'})
+  }
+
+  const selectAbout = () => {
+    aboutRef.current.scrollIntoView({ behavior: 'smooth'})
+  }
+
+  const selectExperience = () => {
+    experienceRef.current.scrollIntoView({ behavior: 'smooth'})
+  }
+
+  const selectContact = () => {
+    contactRef.current.scrollIntoView({ behavior: 'smooth'})
+  }
+
   return (
-    <div>
-      {/* <Routes>
-        <Route path="/" element={<Main/>}/>
-        <Route path="projects" element={<Projects/>}/>
-      </Routes> */}
-      <Div>
-        <Div1/>
-        <NameDiv>
-          <Name>LANCE BRACKETT</Name>
-        </NameDiv>
-        <ContactDiv>
-          <ContactGrid>
-            <ContactEmail>
-              <BsEnvelope style={{
-                color: "white", 
-                fontSize: "30px"}}/>
-            </ContactEmail>
-            <LinkedIn>
-              <BsLinkedin style={{
-                color: "white",
-                fontSize: "30px"
-              }}/>
-            </LinkedIn>
-            <GetInTouch>
-              <p style={{
-                color: "white",
-                fontSize: "20px",
-                textAlign: "center",
-                alignVertical: "center"
-              }}>Get In Touch</p>
-            </GetInTouch>
-            <Twitter>
-              <BsTwitter style={{
-                color: "white",
-                fontSize: "30px"
-              }}/>
-            </Twitter>
-          </ContactGrid>
-        </ContactDiv>
-      </Div>
-    </div>
+    <>
+      <div>
+        <Ul>
+          <Li>
+            <Link exact to="/" onClick={selectHome} style={{textDecoration:"none",
+              color: "white",
+            }} ><NavLinkP>HOME</NavLinkP>
+            </Link>
+          </Li>
+          <Li>
+            <Link to="/about" onClick={selectAbout} style={{textDecoration:"none",
+              color: "white",
+            }} ><NavLinkP>ABOUT</NavLinkP>
+            </Link>
+          </Li>
+          <Li>
+            <Link to="/experience"  onClick={selectExperience} style={{textDecoration:"none",
+              color: "white"
+            }} ><NavLinkP>EXPERIENCE</NavLinkP>
+            </Link>
+          </Li>
+          <Li>
+            <Link to="/contact" onClick={selectContact} style={{textDecoration:"none",
+              color: "white"
+            }} ><NavLinkP>CONTACT</NavLinkP>
+            </Link>
+          </Li>
+        </Ul>
+      </div>
+      <div>
+        <Routes>
+          <Route exact path="/" component={Home}/>
+          <Route path="about" component={About}/>
+          <Route path="contact" component={Contact}/>
+          <Route path="experience" component={Experience}/>
+        </Routes>
+      </div>
+      <div ref={homeRef}>
+        <Home/>
+      </div>
+      <div ref={aboutRef}>
+        <About/>
+      </div>
+      <div ref={contactRef}>
+        <Contact/>
+      </div>
+      <div ref={experienceRef}>
+        <Experience />
+      </div>
+    </>
   )
 }
 
