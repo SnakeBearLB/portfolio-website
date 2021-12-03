@@ -13,11 +13,12 @@ import About from "../sections/About";
 import Contact from "../sections/Contact";
 import Experience from "../sections/Experience";
 import { easeQuadInOut } from "d3-ease";
+import Resume from '../Assets/lance-brackett-resume.pdf'
 
 // styling
+import { Ul, Li, NavLinkP, NavBar, LogoDiv, Logo, Socials, IconLink, LinkedIn, Github, Twitter, ResumeDiv, P, ResumeLink} from "../styles/Main.styled";
+import logo from '../logo.svg'
 
-import "../styles/styles.css";
-import { Ul, Li, NavLinkP, NavBar } from "../styles/Main.styled";
 
 const Main = () => {
   const homeRef = useRef(null);
@@ -140,33 +141,33 @@ const Main = () => {
 
   const props1 = useSpring({
     // state shouldn't have to be repeated multiple times
-    from: home ? { x: -300, opacity: 0 } : { x: 0, opacity: 0 },
+    from: home ? { y: -100, opacity: 0 } : { y: 0, opacity: 0 },
     delay: home ? 300 : 0,
-    to: home ? { x: 0, opacity: 1 } : { x: -300, opacity: 0 },
+    to: home ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 },
     config: home ? { easing: easeQuadInOut, duration: 1500 } : 0
   });
 
   const props2 = useSpring({
     // state shouldn't have to be repeated multiple times
-    from: about ? { x: -300, opacity: 0 } : { x: 0, opacity: 0 },
+    from: about ? { y: -100, opacity: 0 } : { y: 0, opacity: 0 },
     delay: about ? 300 : 0,
-    to: about ? { x: 0, opacity: 1 } : { x: -300, opacity: 0 },
+    to: about ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 },
     config: about ? { easing: easeQuadInOut, duration: 1500 } : 0
   });
 
   const props3 = useSpring({
     // state shouldn't have to be repeated multiple times
-    from: experience ? { x: -300, opacity: 0 } : { x: 0, opacity: 0 },
+    from: experience ? { y: -100, opacity: 0 } : { y: 0, opacity: 0 },
     delay: experience ? 300 : 0,
-    to: experience ? { x: 0, opacity: 1 } : { x: -300, opacity: 0 },
+    to: experience ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 },
     config: experience ? { easing: easeQuadInOut, duration: 1500 } : 0
   });
 
   const props4 = useSpring({
     // state shouldn't have to be repeated multiple times
-    from: contact ? { x: -300, opacity: 0 } : { x: 0, opacity: 0 },
+    from: contact ? { y: -100, opacity: 0 } : { y: 0, opacity: 0 },
     delay: contact ? 300 : 0,
-    to: contact ? { x: 0, opacity: 1 } : { x: -300, opacity: 0 },
+    to: contact ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 },
     config: contact ? { easing: easeQuadInOut, duration: 1500 } : 0
   });
 
@@ -179,6 +180,7 @@ const Main = () => {
       */}
 
       <NavBar>
+        <Logo src={logo}/>
         <Ul>
           <Li>
             <Link
@@ -217,6 +219,13 @@ const Main = () => {
               <NavLinkP>CONTACT</NavLinkP>
             </Link>
           </Li>
+          <Li>
+            <ResumeLink target="_blank" href={Resume}>
+              <ResumeDiv>
+                <P>Resume</P>
+              </ResumeDiv>
+            </ResumeLink>
+          </Li>
         </Ul>
       </NavBar>
 
@@ -251,6 +260,19 @@ const Main = () => {
           {isVisible ? "IN VIEWPORT" : "NOT IN VIEWPORT"}
         </div>
       </div> */}
+
+      <Socials>
+        <IconLink target="_blank" href="https://www.linkedin.com/in/lancebrackett/">
+          <LinkedIn></LinkedIn>
+        </IconLink>
+        <IconLink target="_blank" href="https://github.com/SnakeBearLB">
+          <Github></Github>
+        </IconLink>
+        <IconLink target="_blank" href="https://twitter.com/lancebrackett/">
+          <Twitter></Twitter>
+        </IconLink>
+
+      </Socials>
     </>
   );
 };

@@ -8,12 +8,13 @@ export const H1 = styled.h1 `
 `
 export const Div = styled.div `
   height: 100vh;
+  width: 100%;
   margin-top: 7em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: grey;
+  margin: auto;
 `
 export const P = styled.p `
   color: white;

@@ -13,6 +13,10 @@ export const P = styled.p `
 export const Div = styled.div `
   height: 100vh;
   margin-top: 7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 export const GetInTouch = styled.div `
@@ -20,13 +24,12 @@ export const GetInTouch = styled.div `
   height: 3em;
   border: solid 1px white;
   border-radius: 5px;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
-export const Socials = styled.div `
-  width: 10em;
-  height: 3em;  
-  position: absolute;
-  bottom: 0;
-  background: white;
+export const MailToLink = styled.a `
+  text-decoration: none;
 `
+

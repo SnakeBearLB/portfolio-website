@@ -8,6 +8,10 @@ export const H1 = styled.h1 `
 export const Div = styled.div `
   height: 100vh;
   margin-top: 7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 export const H2 =styled.h2 `
@@ -21,3 +25,21 @@ export const ProjectDiv = styled.div `
   text-align: center;
   margin-left: 10vw;
 `
+export const DataMoonDiv = styled.div `
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`
+
+export const Img = styled.img `
+  width: 20em;
+  border: solid 2px white;
+  border-radius: 5px;
+`
+
+export const ImgLink = styled.a `
+  text-decoration: none;
+`
+

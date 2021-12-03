@@ -1,5 +1,5 @@
 
-import { Div, H1, P, Socials} from "../styles/Home.styled"
+import { Div, H1, P} from "../styles/Home.styled"
 import { useSpring, animated } from 'react-spring'
 
 const Home = ({props1}) => {
@@ -8,17 +8,12 @@ const Home = ({props1}) => {
     delay: 700
   })
 
-  console.log(props1.x.id)
-
   return (
     <Div>
       <animated.div style={props1}>
         <H1>lance brackett</H1>
+        <P>Software engineer and blockchain developer</P>
       </animated.div>
-      <animated.div style={props}>
-        <P>I like to say that I'm a software engineer and blockchain developer. I create, develop, design, and build software. Even get paid for it sometimes.</P>
-      </animated.div>
-      <Socials></Socials>
     </Div>
   )
 }
