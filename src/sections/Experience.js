@@ -1,10 +1,19 @@
-import { Div } from '../styles/Experience.styled'
+import { Div, H1, H2, ProjectDiv } from '../styles/Experience.styled'
 
 
 const Experience = () => {
   return (
     <Div>
-      <h1  style={{color: 'white'}}>Experience</h1>
+      <H1  style={{color: 'white'}}>Experience</H1>
+      <ProjectDiv>
+        <H2>Project 1</H2>
+      </ProjectDiv>
+      <ProjectDiv>
+        <H2>Project 2</H2>
+      </ProjectDiv>
+      <ProjectDiv>
+        <H2>Project 3</H2>
+      </ProjectDiv>
     </Div>
   )
 }

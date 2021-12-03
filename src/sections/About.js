@@ -1,11 +1,15 @@
-
+import {useState, useEffect} from 'react'
+import { useSpring, animated, config} from 'react-spring'
 import {H1, Div} from '../styles/About.styled'
 
 
+
+
 const About = () => {
+
   return (
     <Div>
-      <H1 id="about">About</H1>
+      <H1>About</H1>
     </Div>
   )
 }
