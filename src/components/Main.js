@@ -1,12 +1,10 @@
 
 import React, { useRef, useEffect, useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   useSpring,
   animated,
-  config,
   useSpringRef,
-  useTransition
 } from "react-spring";
 import Home from "../sections/Home";
 import About from "../sections/About";
@@ -15,10 +13,8 @@ import Experience from "../sections/Experience";
 import { easeQuadInOut } from "d3-ease";
 import Resume from '../Assets/lance-brackett-resume.pdf'
 
-// styling
 import { Ul, Li, NavLinkP, NavBar, LogoDiv, Logo, Socials, IconLink, LinkedIn, Github, Twitter, ResumeDiv, P, ResumeLink} from "../styles/Main.styled";
 import logo from '../logo.svg'
-
 
 const Main = () => {
   const homeRef = useRef(null);
@@ -49,12 +45,8 @@ const Main = () => {
     contactRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  // useRef for intersection observer
   const containerRef = useRef();
 
-  // const springRef = useSpringRef();
-
-  // callback function
   const homeCallBack = (entries) => {
     const [entry] = entries;
     homeToggle(entry.isIntersecting);
@@ -80,8 +72,6 @@ const Main = () => {
     rootMargin: "0px",
     threshold: 0.1
   };
-
-  // useEffect for intersection observer
 
   useEffect(() => {
     const observer = new IntersectionObserver(homeCallBack, options);
@@ -140,7 +130,6 @@ const Main = () => {
   }, [contactRef, options]);
 
   const props1 = useSpring({
-    // state shouldn't have to be repeated multiple times
     from: home ? { opacity: 0 } : { opacity: 0 },
     delay: home ? 300 : 0,
     to: home ? { opacity: 1 } : { opacity: 0 },
@@ -148,7 +137,6 @@ const Main = () => {
   });
 
   const props2 = useSpring({
-    // state shouldn't have to be repeated multiple times
     from: about ? { opacity: 0 } : { opacity: 0 },
     delay: about ? 300 : 0,
     to: about ? { opacity: 1 } : { opacity: 0 },
@@ -156,7 +144,6 @@ const Main = () => {
   });
 
   const props3 = useSpring({
-    // state shouldn't have to be repeated multiple times
     from: experience ? { opacity: 0 } : { opacity: 0 },
     delay: experience ? 300 : 0,
     to: experience ? { opacity: 1 } : { opacity: 0 },
@@ -164,7 +151,6 @@ const Main = () => {
   });
 
   const props4 = useSpring({
-    // state shouldn't have to be repeated multiple times
     from: contact ? { opacity: 0 } : { opacity: 0 },
     delay: contact ? 300 : 0,
     to: contact ? { opacity: 1 } : { opacity: 0 },
@@ -173,12 +159,6 @@ const Main = () => {
 
   return (
     <>
-      {/* 
-        //////////////////////    
-        //~~~ Navigation ~~~//
-        //////////////////////
-      */}
-
       <NavBar>
         <Logo src={logo}/>
         <Ul>
@@ -229,16 +209,8 @@ const Main = () => {
         </Ul>
       </NavBar>
 
-      {/* 
-      ////////////////////    
-      //~~~ Sections ~~~//
-      ////////////////////
-      */}
-
       <div class="home" ref={homeRef}>
-        {/* <animated.div style={props1}> */}
-          <Home props1={props1} />
-        {/* </animated.div> */}
+        <Home props1={props1} />
       </div>
       <div class="about" ref={aboutRef}>
         <animated.div style={props2}>
@@ -255,11 +227,6 @@ const Main = () => {
           <Contact />
         </animated.div>
       </div>
-      {/* <div className="app">
-        <div className="isVisible">
-          {isVisible ? "IN VIEWPORT" : "NOT IN VIEWPORT"}
-        </div>
-      </div> */}
 
       <Socials>
         <IconLink target="_blank" href="https://www.linkedin.com/in/lancebrackett/">
