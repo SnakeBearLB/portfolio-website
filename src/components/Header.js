@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Navbar from "./Navbar";
 import MobileNav from "./MobileNav";
-import {Logo} from '../styles/MobileNav.styled'
+import {Logo} from '../styles/Header.styled'
 import logo from '../logo.svg'
 
 const Header = ({selectHome, selectAbout, selectExperience, selectContact}) => {

@@ -36,17 +36,20 @@ export const Logo = styled.img `
 `
 
 export const Socials = styled.div `
-  width: 100%;
-  height: 3em;  
+  width: 15em;
+  height: 4em;  
   position: fixed;
-  bottom: 1px; 
+  bottom: 0px; 
   display: flex;
   justify-content: center;
-  align-content: center;
-`
-
-export const IconDiv = styled.div `
-  margin: 1em;
+  align-items: center;
+  border-top: solid 2px white;
+  border-left: solid 2px white;
+  border-right: solid 2px white;
+  border-radius: 5px;
+  background: black;
+  left: 50%;
+  transform: translate(-50%)
 `
 
 export const LinkedIn = styled(FaLinkedinIn) `

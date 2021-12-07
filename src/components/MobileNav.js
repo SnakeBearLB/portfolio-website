@@ -2,9 +2,8 @@
 
 import {useState} from 'react'
 
-
-
-import {Hamburger, Ul, Li, ClosedIcon, MenuIcon, NavLink} from '../styles/MobileNav.styled'
+import {Hamburger, P, Ul, Li, ClosedIcon, MenuIcon, NavLink, ResumeDiv, ResumeLink} from '../styles/MobileNav.styled'
+import Resume from '../Assets/lance-brackett-resume.pdf'
 
 const MobileNav = ({selectHome, selectAbout, selectExperience, selectContact}) => {
 
@@ -57,6 +56,11 @@ const MobileNav = ({selectHome, selectAbout, selectExperience, selectContact}) =
               <p>CONTACT</p>
             </Li>
           </NavLink>
+          <ResumeLink target="_blank" href={Resume}>
+            <ResumeDiv>
+              <P>Resume</P>
+            </ResumeDiv>
+          </ResumeLink>
         </Ul>
       </>
     )

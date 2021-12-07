@@ -11,6 +11,7 @@ import Home from "../sections/Home";
 import About from "../sections/About";
 import Contact from "../sections/Contact";
 import Experience from "../sections/Experience";
+import Footer from './Footer'
 import { easeQuadInOut } from "d3-ease";
 
 import Navbar from './Navbar'
@@ -197,6 +198,7 @@ const Main = () => {
           <Twitter></Twitter>
         </IconLink>
       </Socials>
+      <Footer />
     </>
   );
 };
