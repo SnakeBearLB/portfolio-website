@@ -19,7 +19,7 @@ const About = () => {
           <Li>Javascript</Li>
           <Li>React</Li>
           <Li>React Native</Li>
-          <Li>DApps(decentralized applications</Li>
+          <Li>DApps(decentralized applications)</Li>
           <Li>Smart Contracts</Li>
         </ul>
       </RecentTechDiv>
