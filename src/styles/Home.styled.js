@@ -20,6 +20,7 @@ export const P = styled.p `
   color: white;
   width: 50vw;
   text-align: center;
+  margin: auto;
 `
 
 export const Socials = styled.div `
