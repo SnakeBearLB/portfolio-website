@@ -1,20 +1,22 @@
 
 import React, { useRef, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import {
   useSpring,
   animated,
   useSpringRef,
 } from "react-spring";
+import Header from './Header'
 import Home from "../sections/Home";
 import About from "../sections/About";
 import Contact from "../sections/Contact";
 import Experience from "../sections/Experience";
 import { easeQuadInOut } from "d3-ease";
-import Resume from '../Assets/lance-brackett-resume.pdf'
 
-import { Ul, Li, NavLinkP, NavBar, LogoDiv, Logo, Socials, IconLink, LinkedIn, Github, Twitter, ResumeDiv, P, ResumeLink} from "../styles/Main.styled";
-import logo from '../logo.svg'
+import Navbar from './Navbar'
+
+import {Socials, IconLink, LinkedIn, Github, Twitter} from "../styles/Main.styled";
+
 
 const Main = () => {
   const homeRef = useRef(null);
@@ -159,56 +161,12 @@ const Main = () => {
 
   return (
     <>
-      <NavBar>
-        <Logo src={logo}/>
-        <Ul>
-          <Li>
-            <Link
-              exact
-              to="/"
-              onClick={selectHome}
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <NavLinkP>HOME</NavLinkP>
-            </Link>
-          </Li>
-          <Li>
-            <Link
-              to="/about"
-              onClick={selectAbout}
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <NavLinkP>ABOUT</NavLinkP>
-            </Link>
-          </Li>
-          <Li>
-            <Link
-              to="/experience"
-              onClick={selectExperience}
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <NavLinkP>EXPERIENCE</NavLinkP>
-            </Link>
-          </Li>
-          <Li>
-            <Link
-              to="/contact"
-              onClick={selectContact}
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <NavLinkP>CONTACT</NavLinkP>
-            </Link>
-          </Li>
-          <Li>
-            <ResumeLink target="_blank" href={Resume}>
-              <ResumeDiv>
-                <P>Resume</P>
-              </ResumeDiv>
-            </ResumeLink>
-          </Li>
-        </Ul>
-      </NavBar>
-
+      <Header 
+        selectHome={selectHome}
+        selectAbout={selectAbout}
+        selectExperience={selectExperience}
+        selectContact={selectContact}
+      />
       <div class="home" ref={homeRef}>
         <Home props1={props1} />
       </div>
@@ -238,7 +196,6 @@ const Main = () => {
         <IconLink target="_blank" href="https://twitter.com/lancebrackett/">
           <Twitter></Twitter>
         </IconLink>
-
       </Socials>
     </>
   );
