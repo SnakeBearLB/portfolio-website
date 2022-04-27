@@ -3,8 +3,6 @@ import { useSpring, animated, config} from 'react-spring'
 import {H1, H2, Div, RecentTechDiv, P, Li} from '../styles/About.styled'
 
 
-
-
 const About = () => {
 
   return (
