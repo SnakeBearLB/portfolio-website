@@ -8,7 +8,7 @@ const About = () => {
   return (
     <Div>
       <H1>About</H1>
-      <P>I'm a Full Stack Software Engineer and Blockchain Developer. I find great enjoyment in transversing technology and humanity. I'm captivated by the next possibility. I believe technology is a deeply human narrative. I desire to use my time in helping bring big ideas to life, with conscientious and thoughtful planning, in hopes to contribute to our beautiful story.</P>
+      <P>I'm a Full Stack Software Engineer. I find great enjoyment in transversing technology and humanity. I'm captivated by the next possibility. I believe technology is a deeply human narrative. I desire to use my time in helping bring big ideas to life, with conscientious and thoughtful planning, in hopes to contribute to our beautiful story.</P>
 
       <RecentTechDiv>
         <H2>Tech that's been capturing me lately</H2>
