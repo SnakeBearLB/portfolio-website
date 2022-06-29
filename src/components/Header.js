@@ -26,7 +26,7 @@ const Header = ({selectHome, selectAbout, selectExperience, selectContact}) => {
   }
 
   return (
-    <>
+    <div>
       <div>
         <Logo src={logo}/>
       </div>
@@ -44,7 +44,7 @@ const Header = ({selectHome, selectAbout, selectExperience, selectContact}) => {
           selectContact={selectContact}
         />}
       </div>
-    </>
+    </div>
   )
 
 }
